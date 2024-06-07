@@ -3,8 +3,8 @@
 
 #include "globals.hh"
 
-class G4Material;
 class G4NistManager;
+class G4Material;
 
 class OUG4Materials
 {
