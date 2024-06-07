@@ -1,10 +1,12 @@
 # The Ohio University Edwards Accelerator Laboratory Geant4 Material Library
+## The Edwards Accelerator Laboratory at Ohio University
+### https://doi.org/10.1016/j.phpro.2017.09.050
+
 
 ## Motivation
 The goal of this project is to provide a material database as an easily accessible library for use in Geant4 simulations involving the Edwards Accelerator Laboratory. Common materials encounterd in the lab are available. New materials are added as the lab acquires additional samples and equipment.
 
-The Edwards Accelerator Laboratory at Ohio University
-https://doi.org/10.1016/j.phpro.2017.09.050
+
 
 ## Building
 The only required package is a recent version of Geant4.
