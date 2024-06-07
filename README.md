@@ -10,15 +10,17 @@ The only required package is a recent version of Geant4.
 Copy the header file into your include directory and the resulting library into your lib directory.
 
 Add the following lines to your CMakeLists file for your Geant4 project:
+{
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/)
 
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/)
-
-add_library(OUG4Materials SHARED IMPORTED)
-set_target_properties(OUG4Materials PROPERTIES
-  IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/lib/libOUG4Materials.so"
-)
+    add_library(OUG4Materials SHARED IMPORTED)
+    set_target_properties(OUG4Materials PROPERTIES
+    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/lib/libOUG4Materials.so"
+    )
+}
 
 and make sure to add OUG4Materials to your target_link_libraries. As an example, it might look like:
 
-target_link_libraries(neutron_backgrounds PUBLIC ${Geant4_LIBRARIES} OUG4Materials)
-
+{
+    target_link_libraries(neutron_backgrounds PUBLIC ${Geant4_LIBRARIES} OUG4Materials)
+}
