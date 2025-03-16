@@ -21,6 +21,7 @@ class OUG4Materials
     // Defined in place - they only return the material named
     G4Material* GetC6LYCMaterial_95() {return C6LYC_95;};
     G4Material* GetC7LYCMaterial_99() {return C7LYC_99;};
+    G4Material* GetC7LYCMaterial_99_9() {return C7LYC_99_9;};
     G4Material* GetHAVARMaterial() {return HAVAR;};
     G4Material* Get_MuMetal_UNS14080Material() {return MuMetal_UNS14080;};
     G4Material* GetQuartzMaterial() {return Quartz;};
@@ -39,6 +40,7 @@ class OUG4Materials
     // Material Set functions
     void SetC6LYCMaterial_95();
     void SetC7LYCMaterial_99();
+    void SetC7LYCMaterial_99_9();
     void SetHAVARMaterial();
     void Set_MuMetal_UNS14080Material();
     void SetQuartzMaterial();
@@ -48,6 +50,7 @@ class OUG4Materials
     G4Material* HAVAR;
     G4Material* C7LYC_99;
     G4Material* C6LYC_95;
+    G4Material* C7LYC_99_9;
     G4Material* Quartz;
     
 

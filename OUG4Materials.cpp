@@ -23,11 +23,6 @@ OUG4Materials::OUG4Materials(G4NistManager* thenist)
 // Destructor
 OUG4Materials::~OUG4Materials()
 {
-    // delete MuMetal_UNS14080;
-    // delete HAVAR;
-    // delete C7LYC_99;
-    // delete C6LYC_95;
-    // delete Quartz;
 }
 
 // Set the G4NistManager
@@ -42,6 +37,7 @@ void OUG4Materials::SetMaterials()
 {
     SetC6LYCMaterial_95();
     SetC7LYCMaterial_99();
+    SetC7LYCMaterial_99_9();
     SetHAVARMaterial();
     Set_MuMetal_UNS14080Material();
     SetQuartzMaterial();
@@ -116,6 +112,50 @@ void OUG4Materials::SetC7LYCMaterial_99()
     // Add Li6 and Li7 to the enriched element
     Li7Enh_el->AddIsotope(Li6_i, 1 * perCent);
     Li7Enh_el->AddIsotope(Li7_i, 99 * perCent);
+
+    // Get the other elements from constructing the detector from the geant4 database. All other elements used in construction of the detector are of natural abundance.
+    G4Element* elCl = NistManager->FindOrBuildElement(17);
+    G4Element* elY = NistManager->FindOrBuildElement(39);
+    G4Element* elCs = NistManager->FindOrBuildElement(55);
+
+    // Define the clyc molecule and add the components to it
+    C7LYC_99 = new G4Material(name,density,ncomponents);
+    C7LYC_99->AddElement(elCs, 20*perCent);
+    C7LYC_99->AddElement(Li7Enh_el, 10*perCent);
+    C7LYC_99->AddElement(elY, 10*perCent);
+    C7LYC_99->AddElement(elCl, 60*perCent);
+
+    return;
+}
+
+// Set the C7LYC Material with 99.9% Lithium-7
+// It is likely the Lithium-6 abundance is below even %1 for the 75 mm x 10 mm detector. This
+// allows tests of that material. Experiments suggest that the content must
+// be well below 1%, despite the indications on the data sheet.
+void OUG4Materials::SetC7LYCMaterial_99_9()
+{
+    // Define some base properties of the new material
+    G4String name = "C7LYC_99_9";
+    G4double density = 3.31 * g/cm3;
+    G4int ncomponents = 4;
+
+    // Define the enriched Li6 element
+    G4Element* Li7Enh_el = new G4Element("Li7Enhanced","Li7Enh" ,2);
+
+    // Get the natural abundance litium from the geant4 database
+    G4Element* Li_i = NistManager->FindOrBuildElement("Li",true);
+    
+    // Get the Li6 and Li7 isotopes from the geant4 database; must use const_cast<G4Isotope *> () to successfully use in construction of enriched element.
+    
+    // Get Li6
+    G4Isotope* Li6_i = const_cast<G4Isotope *> (Li_i->GetIsotope(0));
+    
+    // Get Li7 
+    G4Isotope* Li7_i = const_cast<G4Isotope *> (Li_i->GetIsotope(1));
+
+    // Add Li6 and Li7 to the enriched element
+    Li7Enh_el->AddIsotope(Li6_i, .1 * perCent);
+    Li7Enh_el->AddIsotope(Li7_i, 99.9 * perCent);
 
     // Get the other elements from constructing the detector from the geant4 database. All other elements used in construction of the detector are of natural abundance.
     G4Element* elCl = NistManager->FindOrBuildElement(17);
