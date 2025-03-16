@@ -163,11 +163,11 @@ void OUG4Materials::SetC7LYCMaterial_99_9()
     G4Element* elCs = NistManager->FindOrBuildElement(55);
 
     // Define the clyc molecule and add the components to it
-    C7LYC_99 = new G4Material(name,density,ncomponents);
-    C7LYC_99->AddElement(elCs, 20*perCent);
-    C7LYC_99->AddElement(Li7Enh_el, 10*perCent);
-    C7LYC_99->AddElement(elY, 10*perCent);
-    C7LYC_99->AddElement(elCl, 60*perCent);
+    C7LYC_99_9 = new G4Material(name,density,ncomponents);
+    C7LYC_99_9->AddElement(elCs, 20*perCent);
+    C7LYC_99_9->AddElement(Li7Enh_el, 10*perCent);
+    C7LYC_99_9->AddElement(elY, 10*perCent);
+    C7LYC_99_9->AddElement(elCl, 60*perCent);
 
     return;
 }
