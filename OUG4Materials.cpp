@@ -78,10 +78,10 @@ void OUG4Materials::SetC6LYCMaterial_95()
 
     // Define the CLYC molecule
     C6LYC_95 = new G4Material(name,density,ncomponents);
-    C6LYC_95->AddElement(elCs, 20*perCent);
-    C6LYC_95->AddElement(Li6Enh_el, 10*perCent);
-    C6LYC_95->AddElement(elY, 10*perCent);
-    C6LYC_95->AddElement(elCl, 60*perCent);
+    C6LYC_95->AddElementByNumberOfAtoms(elCs,2);
+    C6LYC_95->AddElementByNumberOfAtoms(Li6Enh_el, 1);
+    C6LYC_95->AddElementByNumberOfAtoms(elY, 1);
+    C6LYC_95->AddElementByNumberOfAtoms(elCl, 6);
 
     return;
 
@@ -120,10 +120,10 @@ void OUG4Materials::SetC7LYCMaterial_99()
 
     // Define the clyc molecule and add the components to it
     C7LYC_99 = new G4Material(name,density,ncomponents);
-    C7LYC_99->AddElement(elCs, 20*perCent);
-    C7LYC_99->AddElement(Li7Enh_el, 10*perCent);
-    C7LYC_99->AddElement(elY, 10*perCent);
-    C7LYC_99->AddElement(elCl, 60*perCent);
+    C7LYC_99->AddElementByNumberOfAtoms(elCs,2);
+    C7LYC_99->AddElementByNumberOfAtoms(Li7Enh_el, 1);
+    C7LYC_99->AddElementByNumberOfAtoms(elY, 1);
+    C7LYC_99->AddElementByNumberOfAtoms(elCl, 6);
 
     return;
 }
