@@ -164,10 +164,10 @@ void OUG4Materials::SetC7LYCMaterial_99_9()
 
     // Define the clyc molecule and add the components to it
     C7LYC_99_9 = new G4Material(name,density,ncomponents);
-    C7LYC_99_9->AddElement(elCs, 20*perCent);
-    C7LYC_99_9->AddElement(Li7Enh_el, 10*perCent);
-    C7LYC_99_9->AddElement(elY, 10*perCent);
-    C7LYC_99_9->AddElement(elCl, 60*perCent);
+    C7LYC_99_9->AddElementByNumberOfAtoms(elCs,2);
+    C7LYC_99_9->AddElementByNumberOfAtoms(Li7Enh_el, 1);
+    C7LYC_99_9->AddElementByNumberOfAtoms(elY, 1);
+    C7LYC_99_9->AddElementByNumberOfAtoms(elCl, 6);
 
     return;
 }
