@@ -263,7 +263,7 @@ void OUG4Materials::SetSAMBe9TargetMaterial()
     // Define some base properties of the new material
     G4String name = "SAM_Be9";
     G4double density = 1.845 * g/cm3;
-    G4int ncomponents = 11;
+    G4int ncomponents = 10;
 
     G4Element* elAl = NistManager->FindOrBuildElement(13);
     G4Element* elCu = NistManager->FindOrBuildElement(29);
