@@ -25,6 +25,7 @@ class OUG4Materials
     G4Material* GetHAVARMaterial() {return HAVAR;};
     G4Material* Get_MuMetal_UNS14080Material() {return MuMetal_UNS14080;};
     G4Material* GetQuartzMaterial() {return Quartz;};
+    G4Material* GetSAMBe9TargetMaterial() {return SAMBe9;};
 
     // Set the G4NistManager
     void SetNistManager(G4NistManager* thenist);
@@ -44,6 +45,8 @@ class OUG4Materials
     void SetHAVARMaterial();
     void Set_MuMetal_UNS14080Material();
     void SetQuartzMaterial();
+    void SetSAMBe9TargetMaterial();
+
 
     // Materials
     G4Material* MuMetal_UNS14080;
@@ -52,6 +55,8 @@ class OUG4Materials
     G4Material* C6LYC_95;
     G4Material* C7LYC_99_9;
     G4Material* Quartz;
+    G4Material* SAMBe9;
+
     
 
 
