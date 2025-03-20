@@ -256,7 +256,7 @@ void OUG4Materials::SetSAMBe9TargetMaterial()
     G4Element* elO = NistManager->FindOrBuildElement(8);
 
     // Define the new material and add the components to it
-    G4Material *Be2C = new G4Material("Be2C",1.9*g/cm3,ncomponents=2);
+    G4Material *Be2C = new G4Material("Be2C",1.9*g/cm3,2);
     Be2C->AddElementByNumberOfAtoms(elBe,2);
     Be2C->AddElementByNumberOfAtoms(elC,1);
     
