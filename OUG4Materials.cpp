@@ -249,22 +249,23 @@ void OUG4Materials::SetQuartzMaterial()
 // Set the Be9 target material based on the specs from Standford Advanced Materials
 void OUG4Materials::SetSAMBe9TargetMaterial()
 {
-    // Define Be2C
-    // Get the elemental components of the material
-    G4Element* elBe = NistManager->FindOrBuildElement(4);
-    G4Element* elC = NistManager->FindOrBuildElement(6);
-    G4Element* elO = NistManager->FindOrBuildElement(8);
+    // // Define Be2C
+    // // Get the elemental components of the material
+    // G4Element* elBe = NistManager->FindOrBuildElement(4);
+    // G4Element* elC = NistManager->FindOrBuildElement(6);
 
-    // Define the new material and add the components to it
-    G4Material *Be2C = new G4Material("Be2C",1.9*g/cm3,2);
-    Be2C->AddElementByNumberOfAtoms(elBe,2);
-    Be2C->AddElementByNumberOfAtoms(elC,1);
+    // // Define the new material and add the components to it
+    // G4Material *Be2C = new G4Material("Be2C",1.9*g/cm3,2);
+    // Be2C->AddElementByNumberOfAtoms(elBe,2);
+    // Be2C->AddElementByNumberOfAtoms(elC,1);
     
     // Define some base properties of the new material
     G4String name = "SAM_Be9";
     G4double density = 1.845 * g/cm3;
     G4int ncomponents = 10;
 
+    G4Element* elBe = NistManager->FindOrBuildElement(4);
+    G4Element* elC = NistManager->FindOrBuildElement(6);
     G4Element* elAl = NistManager->FindOrBuildElement(13);
     G4Element* elCu = NistManager->FindOrBuildElement(29);
     G4Element* elCr = NistManager->FindOrBuildElement(24);
@@ -272,9 +273,11 @@ void OUG4Materials::SetSAMBe9TargetMaterial()
     G4Element* elMn = NistManager->FindOrBuildElement(25);
     G4Element* elNi = NistManager->FindOrBuildElement(28);
     G4Element* elSi = NistManager->FindOrBuildElement(14);
+    G4Element* elO = NistManager->FindOrBuildElement(8);
+
 
     SAMBe9 = new G4Material(name,density,ncomponents);
-    SAMBe9->AddElementByMassFraction(elBe,98.25*perCent);
+    SAMBe9->AddElementByMassFraction(elBe,98.5*perCent);
     // Impurities
     SAMBe9->AddElementByMassFraction(elAl,0.05*perCent);
     SAMBe9->AddElementByMassFraction(elCu,0.02*perCent);
@@ -283,8 +286,8 @@ void OUG4Materials::SetSAMBe9TargetMaterial()
     SAMBe9->AddElementByMassFraction(elMn,0.02*perCent);
     SAMBe9->AddElementByMassFraction(elNi,0.02*perCent);
     SAMBe9->AddElementByMassFraction(elSi,0.06*perCent);
-    SAMBe9->AddMaterial(Be2C,0.15*perCent);
-    SAMBe9->AddElementByMassFraction(elO,1.28*perCent);
+    SAMBe9->AddElementByMassFraction(elC,0.05*perCent);
+    SAMBe9->AddElementByMassFraction(elO,1.03*perCent);
 
     return;
 }
