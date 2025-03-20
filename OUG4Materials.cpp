@@ -278,7 +278,7 @@ void OUG4Materials::SetSAMBe9TargetMaterial()
 
 
     SAMBe9 = new G4Material(name,density,ncomponents);
-    SAMBe9->AddElementByMassFraction(elBe,98.5*perCent);
+    SAMBe9->AddElementByMassFraction(elBe,98.6*perCent);
     // Impurities
     SAMBe9->AddElementByMassFraction(elAl,0.05*perCent);
     SAMBe9->AddElementByMassFraction(elCu,0.02*perCent);
