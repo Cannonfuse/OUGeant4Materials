@@ -41,6 +41,7 @@ void OUG4Materials::SetMaterials()
     SetHAVARMaterial();
     Set_MuMetal_UNS14080Material();
     SetQuartzMaterial();
+    SetSAMBe9TargetMaterial();
 
     return;
 }
