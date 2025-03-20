@@ -242,7 +242,6 @@ void OUG4Materials::SetQuartzMaterial()
     Quartz = new G4Material(name,density,ncomponents=2);
     Quartz->AddElementByNumberOfAtoms(elSi,1);
     Quartz->AddElementByNumberOfAtoms(elO,2);
-    Quartz->Add
 
     return;
 }
